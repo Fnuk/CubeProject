@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="QrCode_6" size="0.060000 0.060000"/>
+        <ImageTarget name="QrCode_5" size="0.060000 0.060000"/>
+        <ImageTarget name="QrCode_4" size="0.060000 0.060000"/>
+        <ImageTarget name="QrCode_3" size="0.060000 0.060000"/>
+        <ImageTarget name="QrCode_2" size="0.060000 0.060000"/>
+        <ImageTarget name="QrCode_1" size="0.060000 0.060000"/>
+        <ImageTarget name="TheCube.Left" size="0.056000 0.056000"/>
+        <ImageTarget name="TheCube.Right" size="0.056000 0.056000"/>
+        <ImageTarget name="TheCube.Front" size="0.056000 0.056000"/>
+        <ImageTarget name="TheCube.Back" size="0.056000 0.056000"/>
+        <ImageTarget name="TheCube.Top" size="0.056000 0.056000"/>
+        <ImageTarget name="TheCube.Bottom" size="0.056000 0.056000"/>
+        <MultiTarget name="TheCube">
+            <Part name="TheCube.Left" translation="-0.02800000086426735 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="TheCube.Right" translation="0.02800000086426735 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="TheCube.Front" translation="0 0 0.02800000086426735" rotation="AD: 1 0 0 0"/>
+            <Part name="TheCube.Back" translation="0 0 -0.02800000086426735" rotation="AD: 0 1 0 180"/>
+            <Part name="TheCube.Top" translation="0 0.02800000086426735 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="TheCube.Bottom" translation="0 -0.02800000086426735 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
