@@ -17,6 +17,14 @@ using Vuforia;
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
+    #region PUBLIC_MEMBER_VARIABLES
+
+    public bool IsTracked { get; set; }
+    public GameObject sphere;
+
+    #endregion // PUBLIC_MEMBER_VARIABLES
+
+
     #region PROTECTED_MEMBER_VARIABLES
 
     protected TrackableBehaviour mTrackableBehaviour;
@@ -55,13 +63,17 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+            sphere.SetActive(true);
             OnTrackingFound();
+
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NO_POSE)
         {
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+            sphere.SetActive(false);
             OnTrackingLost();
+
         }
         else
         {
@@ -82,6 +94,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
+        IsTracked = true;
+
         // Enable rendering:
         foreach (var component in rendererComponents)
             component.enabled = true;
@@ -101,6 +115,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
+
+        IsTracked = false;
 
         // Disable rendering:
         foreach (var component in rendererComponents)
